@@ -1,0 +1,12 @@
+
+
+                <section id="features">{{ rows | length }}
+        <div class="container">
+            <div class="row">
+
+                            {% for key,row in rows %}
+                    {{ row.content }} 
+                {% endfor %}
+            </div>
+        </div>
+    </section>

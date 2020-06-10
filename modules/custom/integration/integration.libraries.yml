@@ -1,0 +1,4 @@
+integration:
+  version: 1.x
+  js:
+    js/gmaps.js: {}

@@ -1,0 +1,35 @@
+name: multicolor
+description: multicolor theme
+type: theme
+core: 8.x
+screenshot: screenshot.png
+
+stylesheets-remove:
+ -"stylesheet to be removed"
+
+
+libraries:
+#  - owest/jquery-min
+  - core/jquery
+  - multicolor/jquery
+  - multicolor/bootstrap
+  - multicolor/font-awesome
+  - multicolor/animate
+  - multicolor/lightbox
+  - multicolor/responsive
+  - multicolor/wow
+  - multicolor/prettyPhoto
+  - multicolor/main
+
+regions:
+  header: Header
+  search: Search
+  header_main_menu : Header main menu
+  slider: Slider
+  main_service : Main Service
+  happy_clients: Happy Clients
+  take_tour : Take Tour
+  footer: Footer
+  features:  Features
+  content: Drupal Content
+  con: contact form

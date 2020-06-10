@@ -1,0 +1,103 @@
+<?php
+
+use Drupal\Core\Datetime\DrupalDateTime;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
+use Drupal\node\Entity\Node;
+use Drupal\taxonomy\Entity\Term;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use \Drupal\file\Entity\File;
+use Drupal\block\Entity\Block;
+
+/**
+ * @param $variables
+ */
+
+//Saudi Aramco Buildings for Government Schools Division
+function multicolor_preprocess(&$variables)
+{
+    $config_about = Drupal::config('crm.settings');
+    $variables['crmSettings'] = $config_about->get('credentials');
+
+  $file = File::load($variables['crmSettings']['image1'][0]);
+   $variables['footer1']= file_create_url($file->getFileUri());
+$file = File::load($variables['crmSettings']['image2'][0]);
+   $variables['footer2']= file_create_url($file->getFileUri());
+
+     $config_tour = Drupal::config('crm.Tour');
+    $variables['tour'] = $config_tour->get('Tour');
+
+    $config_service = Drupal::config('crm.Service');
+    $variables['service_config'] = $config_service->get('Service');
+    $file = File::load($variables['service_config']['image'][0]);
+   
+   $variables['service_image']= file_create_url($file->getFileUri());
+
+     $config_about = Drupal::config('crm.About');
+    $variables['about_config'] = $config_about->get('About');
+   $file = File::load($variables['about_config']['image'][0]);
+   
+   $variables['about_image']= file_create_url($file->getFileUri());
+
+    $config_contact = Drupal::config('crm.Contact');
+    $variables['contact_config'] = $config_contact->get('Contact');
+
+$config_map = Drupal::config('crm.Map');
+    $variables['contact_map'] = $config_map->get('Map');
+
+     $config_portfolio = Drupal::config('crm.Portfolio');
+    $variables['portfolio'] = $config_portfolio->get('Portfolio');
+
+
+
+  $config_slider = Drupal::config('crm.Slider');
+    $variables['slider_config'] = $config_slider->get('Slider');
+   $file = File::load($variables['slider_config']['image1'][0]);
+   $variables['slider_image1']= file_create_url($file->getFileUri());
+
+   $file = File::load($variables['slider_config']['image2'][0]);
+   $variables['slider_image2']= file_create_url($file->getFileUri());
+
+   $file = File::load($variables['slider_config']['image3'][0]);   
+   $variables['slider_image3']= file_create_url($file->getFileUri());
+
+   $file = File::load($variables['slider_config']['image4'][0]);
+   
+   $variables['slider_image4']= file_create_url($file->getFileUri());
+
+   $file = File::load($variables['slider_config']['image5'][0]);
+   
+   $variables['slider_image5']= file_create_url($file->getFileUri());
+// var_dump($variables['seservice_imagervice_config']);
+// die();
+}
+function multicolor_preprocess_page(&$vars) {
+    // HACK: Use custom 403 and 404 pages
+  
+}
+
+
+function multicolor_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  // Get Request Object.
+  $request = \Drupal::request();
+
+  // If there is HTTP Exception..
+  if ($exception = $request->attributes->get('exception')) {
+    // Get the status code.
+    $status_code = $exception->getStatusCode();
+    if (in_array($status_code, array(401, 403, 404))) {
+      $suggestions[] = 'page__' . $status_code;
+    }
+  }
+}
+function imgPath($image_target_id){
+
+  if(isset($image_target_id)){
+    $file = \Drupal\file\Entity\File::load($image_target_id);
+    if (isset($file))
+    {
+      $path = $file->url();
+      return $path;
+    }
+  }
+}

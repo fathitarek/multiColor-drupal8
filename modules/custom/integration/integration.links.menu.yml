@@ -1,0 +1,57 @@
+integration:
+  title: 'integration settings'
+  description: 'integration configuration'
+  parent: system.admin_config
+  route_name: integration
+  weight: -999
+
+
+integration.admin_settings:
+  title: 'Footer'
+  description: 'Custom Footer Section'
+  parent: integration
+  route_name: integration.admin_settings
+  weight: -999
+
+
+integration.Service_config:
+  title: ' Service'
+  description: 'Change  integration'
+  parent: integration
+  route_name: integration.Service_config
+  weight: -999
+
+integration.Tour:
+  title: 'Tour'
+  description: 'Custom Tour Section'
+  parent: integration
+  route_name: integration.Tour
+  weight: -999
+
+integration.About_config:
+  title: 'About'
+  description: 'About Section'
+  parent: integration
+  route_name: integration.About_config
+  weight: -999
+
+integration.map:
+  title: ' Map'
+  description: 'Map  integration'
+  parent: integration
+  route_name: integration.map
+  weight: -999
+
+integration.Portfolio_config:
+  title: ' Portfolio'
+  description: 'Portfolio  integration'
+  parent: integration
+  route_name: integration.Portfolio_config
+  weight: -999
+
+integration.Slider_config:
+  title: ' Slider'
+  description: 'Slider  integration'
+  parent: integration
+  route_name: integration.Slider_config
+  weight: -999

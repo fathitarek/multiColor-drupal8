@@ -1,0 +1,116 @@
+integration:
+  path: '/admin/config/integration'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'integration Configurations'
+  requirements:
+    _role: 'administrator'
+
+integration.not_found:
+  path: '/page-not-found'
+  defaults:
+    _controller: '\Drupal\integration\Controller\notfoundController::notFound'
+    _title: 'Page not found'
+  requirements:
+    _permission: 'access content'
+    _access: 'TRUE'
+
+integration.admin_settings:
+  path: '/admin/config/footer'
+  defaults:
+    _form: '\Drupal\integration\Form\IntegrationCredentials'
+    _title: ' Integration'
+  requirements:
+    _permission: 'administer site configuration'
+
+
+integration.map:
+  path: '/admin/config/map'
+  defaults:
+    _form: '\Drupal\integration\Form\Map'
+    _title: ' Map'
+  requirements:
+    _permission: 'administer site configuration'
+
+
+integration.service:
+  path: '/service'
+  defaults:
+    _controller: '\Drupal\integration\Controller\serviceController::servicePage'
+  requirements:
+    _permission: 'access content'
+    _access: 'TRUE'
+
+integration.about:
+  path: '/about'
+  defaults:
+    _controller: '\Drupal\integration\Controller\aboutController::aboutPage'
+  requirements:
+    _permission: 'access content'
+    _access: 'TRUE'
+
+integration.Tour:
+  path: '/admin/config/Tour'
+  defaults:
+    _form: '\Drupal\integration\Form\Tour'
+    _title: ' Tour'
+  requirements:
+    _permission: 'administer site configuration'
+
+
+integration.Portfolio_config:
+  path: '/admin/config/Portfolio_config'
+  defaults:
+    _form: '\Drupal\integration\Form\Portfolio_config'
+    _title: ' Portfolio_config'
+  requirements:
+    _permission: 'administer site configuration'
+
+
+integration.Service_config:
+  path: '/admin/config/Service_config'
+  defaults:
+    _form: '\Drupal\integration\Form\Service_config'
+    _title: ' Service'
+  requirements:
+    _permission: 'administer site configuration'
+
+integration.About_config:
+  path: '/admin/config/About_config'
+  defaults:
+    _form: '\Drupal\integration\Form\About_config'
+    _title: ' About'
+  requirements:
+    _permission: 'administer site configuration'
+
+integration.Contact_config:
+  path: '/admin/config/Contact_config'
+  defaults:
+    _form: '\Drupal\integration\Form\Contact_config'
+    _title: ' Contact'
+  requirements:
+    _permission: 'administer site configuration'
+
+integration.branches:
+  path: '/branches'
+  defaults:
+    _controller: '\Drupal\integration\Controller\contactController::contactPage'
+  requirements:
+    _permission: 'access content'
+    _access: 'TRUE'
+
+integration.portfolio:
+  path: '/portfolio'
+  defaults:
+    _controller: '\Drupal\integration\Controller\portfolioController::portfolioPage'
+  requirements:
+    _permission: 'access content'
+    _access: 'TRUE'
+
+integration.Slider_config:
+  path: '/admin/config/Slider_config'
+  defaults:
+    _form: '\Drupal\integration\Form\Slider_config'
+    _title: ' Slider'
+  requirements:
+    _permission: 'administer site configuration'

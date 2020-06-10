@@ -1,0 +1,47 @@
+<?php
+
+/**
+ * Implementing hook_theme().
+ */
+  
+function integration_theme($existing, $type, $theme, $path) {
+  // var_dump($theme);die();
+  // return array(
+ // return array(
+ //    'service' => array(
+ //      'variables' => array('items' => array(), 'title' => '')
+ //    )
+ //  );
+
+
+ $themes['portfolio_page'] = [
+      'variables' => ['title'=>''],
+      'path' => $path.'/templates',
+      'template'=>'portfolio'
+    ];
+
+
+  $themes['integration'] = [
+      'variables' => ['services' => array(),'title'=>''],
+      'path' => $path.'/templates',
+      'template'=>'service'
+    ];
+
+ $themes['about_page'] = [
+      'variables' => ['teams' => array(),'title'=>''],
+      'path' => $path.'/templates',
+      'template'=>'about'
+    ];
+$themes['contact_page'] = [
+      'variables' => ['title'=>''],
+      'path' => $path.'/templates',
+      'template'=>'branches'
+    ];
+    return $themes;
+}
+
+function integration_page_attachments_alter(&$page) {
+
+  $page['#attached']['library'][] = 'integration/integration';
+}
+

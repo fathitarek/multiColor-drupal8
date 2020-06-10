@@ -1,0 +1,67 @@
+jquery:
+  js:
+    assets/js/jquery.js: { weight: -100 }
+  dependencies:
+    - core/jquery
+
+bootstrap:
+  css:
+    component:
+      assets/css/bootstrap.min.css: {}
+  js:
+    assets/js/bootstrap.min.js: {}
+  dependencies:
+    - core/jquery
+
+
+font-awesome:
+  css:
+    component:
+      assets/css/font-awesome.min.css: {}
+
+
+animate:
+  css:
+    component:
+      assets/css/animate.min.css: {}
+
+prettyPhoto:
+  css:
+    component:
+      assets/css/prettyPhoto.css: {}
+
+lightbox:
+  css:
+    component:
+      assets/css/lightbox.css: {}
+  js:
+    assets/js/lightbox.min.js: {}
+  dependencies:
+    - core/jquery
+
+responsive:
+  css:
+    component:
+      assets/css/responsive.css: {}
+
+
+
+wow:
+  js:
+    assets/js/wow.min.js: {}
+
+main:
+  css:
+    component:
+      assets/css/main.css: {}
+  js:
+    assets/js/main.js: {}
+  dependencies:
+    - core/jquery
+    - multicolor/jquery
+    - multicolor/bootstrap
+    - multicolor/font-awesome
+    - multicolor/animate
+    - multicolor/lightbox
+    - multicolor/responsive
+    - multicolor/wow
